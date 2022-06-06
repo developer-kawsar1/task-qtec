@@ -23,121 +23,142 @@
 =======================================================**/
 body {
   font-size: 15px;
-}
+  font-family: 'Poppins';
+
+} 
 
 /**=====================================================**
                    SECTION
 =======================================================**/
-
-section {
-  max-width: 1440px;
-  margin: 0 auto;
-  color: var(--grayish-blue);
+section{
+  background-color: var(--very-light-gray);
+  padding: 50px 0;
 }
-.section-row {
+.section-row{
+  max-width: 525px;
+  margin: 1rem auto;
+  padding: 0 3rem;
   text-align: center;
-  margin: 100px auto;
-}
-.section-row .section-title {
-  font-weight: 200;
-  font-size: 30px;
-  color: var(--very-dark-blue);
-  margin-bottom: 0.5em;
-}
-.section-row .section-title span {
-  font-weight: 600;
-}
-.section-row .section-subtitle {
-  font-size: 16px;
-  font-weight: 400;
-  padding: 0 5%;
-}
-
-.section-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-row-gap: 2em;
-  grid-column-gap: 1em;
-  margin-bottom: 5em;
-  justify-items: center;
-  padding: 0 5%;
-}
-.section-cards .card {
-  max-width: 330px;
-  padding: 2em;
-  border-radius: 6px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-color: var(--White);
-}
-
-.section-cards .card h3 {
-  font-size: 1.3rem;
-  color: var(--very-dark-blue);
-  margin-bottom: 10px;
-}
-.section-cards .card p {
-  font-size: 15px;
-  margin: 0 0 5px;
-}
-.section-cards .card img {
-  float: right;
-}
-
-.section-cards .card-supervisor {
-  border-top: 4px solid var(--Cyan);
-  grid-row: 2/4;
-  justify-self: right;
-}
-.section-cards .card-team-builder {
-  grid-row: 1/3;
-  border-top: 4px solid var(--Red);
-}
-.section-cards .card-karma {
-  grid-row: 3/5;
-  border-top: 4px solid var(--Orange);
-}
-.section-cards .card-calculator {
-  grid-row: 2/4;
-  border-top: 4px solid var(--Blue);
-  justify-self: left;
-}
-
-/**=====================================================**
-                   RENPONSIVE DESIGN
-=======================================================**/
-
-@media screen and (max-width: 375px) {
-  .section-cards {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-   
-  }
-   .section-row {
-     margin: 50px 0;
-   }
+}  
+.section-row .section-title{
+   color: var(--very-dark-blue);
+   font-weight: 300;
+   margin-bottom: 20px; 
+   font-size: 1.4rem;
+} 
+.section-row .section-title span{
+  font-weight: 700;
   
-    
-  .section-cards .card {
-    max-width: 300px;
-    padding: 13px;
-  }
-  .section-cards .card-supervisor {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-  }
-  .section-cards .card-team-builder {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .section-cards .card-karma {
-    grid-column: 1;
-    grid-row: 3;
-  }
-  .section-cards .card-calculator {
-    grid-column: 1;
-    grid-row: 4;
-    justify-self: center;
-  }
+}  
+.section-cards{
+  margin: 2rem 8% 0;
+
+
+} 
+.section-cards .card{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+  border-radius: 5px;
+  margin-bottom: 3rem;
+  padding: 2.4rem 3rem;
+} 
+.section-cards .card.card-supervisor{
+  border-top: 5px solid var(--Cyan); 
+  
 }
+.section-cards .card.card-team-builder{
+  border-top: 5px solid var(--Red); 
+  
+}
+.section-cards .card.card-karma{
+  border-top: 5px solid var(--Orange); 
+  
+}
+.section-cards .card.card-calculator{
+  border-top: 5px solid var(--Blue); 
+  
+} 
+.section-cards .card h3{
+  margin: 0;
+  color: var(--very-dark-blue); 
+
+  font-size: 2rem; 
+  
+  
+} 
+.section-cards p{
+  margin: 10px 0;
+  padding: 0 5px;
+}
+.section-cards .img-container{
+
+  display: flex;
+  justify-content: flex-end;
+} 
+@media screen and (min-width:375px) { 
+  .section-row .section-title{
+    font-size: 1.5rem;
+  }
+  .section-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  
+  
+  }  
+  .section-cards .card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding:1rem 1rem;
+  }  
+  .section-cards .card h3{
+    margin: 0;
+    color: var(--very-dark-blue); 
+    /* display: none; */
+    font-size: 1.5rem;
+  }   
+  
+
+} 
+
+@media screen and (min-width:900px) { 
+  .section-row .section-title{
+    font-size: 2.0rem;
+  }
+  .section-cards{
+  
+    grid-template-columns: 1fr 1fr 1fr ; 
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem; 
+    grid-gap: 2rem;
+    grid-template-areas: 
+    
+    "first middle last"
+    "first middle2 last" ;
+  
+  }  
+  .section-cards .card.card-supervisor{
+    grid-area: first;
+    align-self: center;
+  } 
+  .section-cards .card.card-team-builder{
+    grid-area: middle;
+  } 
+  .section-cards .card.card-karma{
+    grid-area:middle2;
+  } 
+  .section-cards .card.card-calculator{
+   grid-area: last;
+   align-self: center;
+    
+  }  
+  .section-cards .card h3{
+    font-size: 2rem;
+  } 
+  .section-cards .card{
+ 
+ 
+    margin-bottom: 1rem;
+    padding: 2.4rem 3rem;
+  } 
+} 
